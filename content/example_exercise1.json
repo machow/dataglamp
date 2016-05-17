@@ -1,0 +1,42 @@
+{
+	"code": {
+		"pre-exercise-code": "",
+		"sample-code": "a <- 1\n# make a 2",
+		"solution": "a <- 1\n# make a 2\na <- a + 1",
+		"sct": "test_object(\"a\", \"equivalent\", TRUE, NULL, NULL)\nsuccess_msg(\"you did it!\")"
+	},
+	"specs": [
+		["test_object", {
+			"name": "name",
+			"content": "\"a\"",
+			"type": "positional",
+			"isExpr": "FALSE"
+		}, {
+			"name": "eq_condition",
+			"content": "\"equivalent\"",
+			"type": "keyword",
+			"isExpr": "FALSE"
+		}, {
+			"name": "eval",
+			"content": "TRUE",
+			"type": "keyword",
+			"isExpr": "FALSE"
+		}, {
+			"name": "undefined_msg",
+			"content": "NULL",
+			"type": "keyword",
+			"isExpr": "FALSE"
+		}, {
+			"name": "incorrect_msg",
+			"content": "NULL",
+			"type": "keyword",
+			"isExpr": "FALSE"
+		}],
+		["success_msg", {
+			"name": "msg",
+			"content": "\"you did it!\"",
+			"type": "positional",
+			"isExpr": "FALSE"
+		}]
+	]
+}

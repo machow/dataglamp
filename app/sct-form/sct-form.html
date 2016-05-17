@@ -1,0 +1,14 @@
+<style>
+</style>
+<form action="#">
+		<div class="form-group floating-label-wrapper" ng-repeat="arg in vm.args" dg-floating-label>
+			<label for="input">unused?</label>
+			<input type="text" class="form-control dg-sct-input"
+                          ng-model="arg.content"
+                          ng-change="vm.setPlaceholder(arg)">
+      <div class="floating-label">{{arg.name}} = {{arg.placeholder}}</div>
+	  </div>
+
+</form>
+
+

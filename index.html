@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="dataglamp">
+
+<style>
+.dg-btn-round {
+  border-radius: 50%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background: 0 0;
+  border: none;
+}
+
+.dg-icon-md {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.dg-growtate { transition: all .15s ease-in-out; }
+.dg-growtate:hover { transform: scale(1.05) rotate(10deg); }
+
+.no-focus:focus {
+  outline: none;
+}
+
+.dg-inline {
+  display: inline;
+}
+/* for floating labels */
+/*#303F9F*/
+.well {
+  margin: 10px;
+}
+
+.well input {
+  margin-bottom: 20px;
+}
+
+.floating-label-wrapper {
+  position: relative;
+}
+
+.floating-label {
+	color: #7E7E7E;
+	/*font-size: 14px;*/
+	position: absolute;
+	pointer-events: none;
+	left: 0px;
+	top: 7px;
+	transition: 0.2s ease all;
+	opacity: 0;
+}
+.form-control:focus ~ .floating-label,
+.form-control:not(.empty) ~ .floating-label {
+	top: -15px;
+	left: 0;
+	/*font-size: 11px;*/
+	opacity: 1;
+  color: #FF5722;
+}
+
+.form-control.empty {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.form-control.empty ~ .floating-label  {
+	opacity: 1;
+}
+textarea { resize: none; }
+textarea ~ .form-control-highlight {
+	margin-top: -11px;
+}
+
+/* input corresponding to floating labels */
+
+.dg-sct-input {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 4px 0;
+  width: 100%;
+  background: 0 0;
+  text-align: left;
+  color: inherit;
+
+
+}
+
+.dg-sct-input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 1px solid #FF5722;
+}
+
+
+</style>
+
+    <dg-exercise>
+      <div class="container">
+        <div class="col-md-8">
+          <dg-code code="vm.code" sct-prefix="vm.sctPrefix"></dg-code>
+
+          <div id="preview-container">
+            <h3 class="dg-inline">Preview
+              <button class="dg-btn-round dg-growtate no-focus" aria-label="refresh"
+                                    ng-click="vm.runPreview()">
+                <i class="material-icons dg-icon-md">refresh</i>
+              </button>
+            </h3>
+            <a ng-click="vm.loadData('/content/example_exercise2.json')">[load example]</a>
+            <a download="sct_exercise.json" ng-href="{{ vm.jsonUrl }}">
+              [download-{{ vm.jsonUrlNum }}]
+            </a>
+            <div id="preview-screen"></div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <dg-sct-list specs="vm.specs"></dg-sct-list>
+        </div> 
+
+
+    </dg-exercise>
+
+
+
+  </div>
+
+  <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
+  <script src="app/app_bundle.js"></script>
+</body>
+</html>

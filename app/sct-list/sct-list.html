@@ -1,0 +1,76 @@
+<style>
+  @media all and (min-width: 992px) {
+    .sct-btn-block {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .dg-fadein {
+    z-index: 2;
+    visibility: hidden;
+  }
+
+  .row-fadein:hover .dg-fadein {
+    visibility: visible;
+  }
+
+	.trim-info {
+		max-width: 50px;
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;  
+		line-height: 15px;
+		position: relative;
+	}
+</style>
+
+
+<!-- ADD SCT PANEL -->
+<div class="row">
+  <!-- TITLE AND SEARCHBAR -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title center">Add SCT</h3>
+    </div>
+    <!-- / -->
+    <!-- Tool Options -->
+    <div class="panel-body">
+      <input type="text" ng-model="vm.searchbar" placeholder="search...">
+      <a ng-click="vm.toggleMaxTool()">(show all)</a>
+      <button class="btn btn-default sct-btn-block"
+              ng-repeat="tool in vm.tools"
+              ng-click="vm.addSpec(tool)" ng-show="vm.isVisible($index)">{{tool}}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODIFY SCT PANEL -->
+<div class="row">
+  <dg-sct-list-panel title="Modify">
+    <uib-accordion dnd-list="vm.specs">
+      <uib-accordion-group ng-repeat="spec in vm.specs" >
+        <uib-accordion-heading>
+          <div class="row row-fadein"> 
+            <div class="col-xs-8">
+              {{spec[0]}} {{spec[1]['content'] | limitTo:14}}
+            </div>
+            <div class="col-xs-4 dg-fadein">
+                <i class="material-icons" ng-click="vm.move($event, $index, $index-1)">keyboard_arrow_up</i>
+                <i class="material-icons" ng-click="vm.move($event, $index, $index+1)">keyboard_arrow_down</i>
+                <i class="material-icons" ng-click="vm.remove($event, $index)">delete</i>
+            </div>
+          </div>
+        </uib-accordion-heading>
+        <dg-sct-form spec="spec"></dg-sct-form>
+      </uib-accordion-group>
+    </uib-accordion>
+  </dg-sct-list-panel>
+</div>
+

@@ -1,0 +1,21 @@
+{
+  "name": "dataglamp",
+  "description": "Datacamp light in style",
+  "main": "src/exercise.js",
+  "authors": [
+    "Michael Chow"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/machow/dataglamp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-ace": "bower"
+  }
+}
