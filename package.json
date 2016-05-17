@@ -35,7 +35,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify . -s dataglamp -o bundle.js",
+    "build": "browserify -g uglifyify . -s dataglamp -o bundle.js",
     "deploy": "./node_modules/gh-pages/bin/gh-pages -d .",
     "watch": "watchify . -d -s dataglamp -o bundle.js",
     "watchApp": "watchify app/app.js -d -o app/app_bundle.js"
