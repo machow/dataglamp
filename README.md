@@ -21,11 +21,11 @@ read, write, and run exercises.
 
 Compare, 
 
-<img src="machow.github.io/dataglamp/content/img/dg-tour.gif" style="max-height: 400px;">
+<img src="https://machow.github.io/dataglamp/content/img/dg-tour.gif" style="max-height: 400px;">
 
 With,
 
-<img src="machow.github.io/dataglamp/content/img/r-tour.gif" style="max-height: 400px;">
+<img src="https://machow.github.io/dataglamp/content/img/r-tour.gif" style="max-height: 400px;">
 
 [Check it out here][gh-page]
 
