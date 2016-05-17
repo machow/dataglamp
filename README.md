@@ -51,4 +51,7 @@ to preview exercises.
 Disclaimer
 ----------
 
-I built this purely out of curiosity and 
+I built this in order to test what it would be like to write exercises via a dashboard.
+It's pretty convenient, but the usual 
+built-an-experimental-web-app-on-top-of-a-third-party-api caveats apply.
+Don't plan on relying on it for anything, except to indulge your curiousity.
