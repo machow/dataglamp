@@ -1,0 +1,52 @@
+<style>
+  .ace_editor {
+    height: 200px;
+  }
+
+  .dg-ace-line-add {
+    position:absolute;
+    z-index:20;
+    background:rgba(100,200,100,0.5);
+  }
+
+  .dg-ace-line-rm {
+    position:absolute;
+    z-index:20;
+    background:rgba(200,100,100,0.5);
+  }
+
+  .dg-inline {
+    display: inline;
+
+  }
+
+</style>
+
+
+<uib-tabset active="vm.activeIndx">
+  <uib-tab index="$index" ng-repeat="entry in vm.code" 
+                          heading="{{entry.name}}">
+    <div ui-ace ng-model="entry.content"></div>
+  </uib-tab>
+  <uib-tab index="3" heading="sct" select="vm.updateSct(vm.specs)">
+    <div ui-ace ng-model="vm.sctPrefix.content"></div>
+    <div ui-ace ng-model="vm.sctPreview" readonly></div>
+  </uib-tab>
+  <uib-tab index="4" heading="split view">
+    <div class="row">
+      <div class="col-sm-6">
+        {{vm.code[1].name}}
+        <div ui-ace="{ onChange: vm.diffAceSample }"
+          ng-model="vm.code[1].content"
+          >
+        </div>
+      </div>
+      <div class="col-sm-6">
+        {{vm.code[2].name}}
+        <div ui-ace="{ onChange: vm.diffAceSolution }"
+             ng-model="vm.code[2].content"
+             >
+        </div>
+      </div>
+  </uib-tab>
+</uib-tabset>
