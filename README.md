@@ -55,3 +55,5 @@ I built this in order to test what it would be like to write exercises via a das
 It's pretty convenient, but the usual 
 built-an-experimental-web-app-on-top-of-a-third-party-api caveats apply.
 Don't plan on relying on it for anything, except to indulge your curiousity.
+
+(I also did not have time to bundle the CSS / some assets and demand no judgement ;)
